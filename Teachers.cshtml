@@ -1,0 +1,119 @@
+﻿@inherits Teacher
+
+@{
+    Layout = "~/_SiteLayout.cshtml";
+}
+
+
+@*<div class="maincontainer" style="background-image:url(@this.Img);background-position-x:center;">
+
+    <div class="lenyom">
+
+    </div>*@
+
+<div class="maintext-holder maintext-@this.Id">
+    <div class="maintext-inner">
+        <div class="maintext">
+            @*<h1>@this.Name</h1>*@
+
+
+            @Html.Raw(this.Bio)
+        </div>
+    </div>
+
+    <div class="infosav">
+        <a class="btn btn-yt" target="_blank" href="@this.YoutubeQuery"><i class="fa fa-youtube-play"></i> youtube médiamegjelenések</a><a class="btn btn-mtmt" target="_blank" href="https://vm.mtmt.hu/search/slist.php?AuthorID=@this.MtmtAuthorid"><i class="fa fa-certificate"></i> mtmt publikációs lista</a><a class="btn btn-scholar" target="_blank" href="https://scholar.google.hu/scholar?as_q=&as_sauthors=@this.ScholarQuery"><i class="fa fa-graduation-cap"></i> google scholar citációk</a><a class="btn btn-academia" target="_blank" href="https://@this.AcademiaEduUrl"><i class="fa fa-graduation-cap"></i> academia.edu profil </a>
+
+
+    </div>
+
+    <div class="infosav2">
+
+        <h3>szakterületek, szakdolgozati témák</h3>
+
+        <p>
+            @foreach (var InterestItem in this.Interests)
+            {<a href="#" class="btn btn-spec"><i class="fa fa-hashtag"></i>@InterestItem</a>}
+            <br /><br />
+        </p>
+
+
+        <h3>válogatott publikációk</h3>
+        <div class="publications" style="background-color:#f5f5f5">
+            @if (!String.IsNullOrEmpty(this.Publications))
+            {
+                @Html.Raw(this.Publications)
+            }
+
+            @if (!String.IsNullOrWhiteSpace(this.Publications_Books))
+            {
+                <h3>könyvek</h3>
+
+                @Html.Raw(this.Publications_Books)
+            }
+
+            @if (!String.IsNullOrWhiteSpace(this.Publications_SemiAuthor))
+            {
+                <h3>könyvek (társszerző)</h3>
+
+                @Html.Raw(this.Publications_SemiAuthor)
+            }
+
+            @if (!String.IsNullOrWhiteSpace(this.Publications_Conference))
+            {
+                <h3>konferenciák</h3>
+
+                @Html.Raw(this.Publications_Conference)
+            }
+
+            @if (!String.IsNullOrWhiteSpace(this.Publications_OtherWorks))
+            {
+                <h3>fontosabb munkák</h3>
+
+                @Html.Raw(this.Publications_OtherWorks)
+            }
+
+            @if (!String.IsNullOrWhiteSpace(this.Publications_OtherClasses))
+            {
+                <h3>oktatott tárgyak</h3>
+
+                @Html.Raw(this.Publications_OtherClasses)
+            }
+
+ 
+        </div>
+
+
+
+        <h3>fogadóóra</h3>
+
+        <p>
+            <i class="fa fa-calendar"></i>@this.OfficeHours
+            <br /><br />
+        </p>
+
+        <h3>elérhetőségek</h3>
+
+
+        @if (!string.IsNullOrEmpty(this.Email))
+        {
+        <p>
+            <i class="fa fa-envelope-o"></i> @this.Email
+         </p>
+        }
+
+        @if (!string.IsNullOrEmpty(this.Telephone))
+        {
+        <p>
+            <i class="fa fa-phone"></i> @this.Telephone<br />
+        </p>
+        }
+
+        <p>
+            <i class="fa fa-university"></i><b>@this.PostalAddress<br /><br /></b>
+        </p>
+
+    </div>
+
+    @*</div>*@
+</div>

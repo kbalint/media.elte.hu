@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<faculty>
+<teacher id="">
+  <name></name>
+  <img></img>
+  <bio>
+    <p>
+    </p>
+  </bio>
+  <youtube_query>https://www.youtube.com/results?search_query=</youtube_query>
+  <mtmt_authorid></mtmt_authorid>
+  <scholar_query></scholar_query>
+  <academiaedu_url></academiaedu_url>
+
+  <interests>
+    <item></item>
+  </interests>
+
+  <office_hours></office_hours>
+
+  <email></email>
+
+  <telephone></telephone>
+
+  <postal_address></postal_address>
+
+  <publications>
+
+    <publication type="publication">
+      <ul>
+        <li>
+        </li>
+      </ul>
+    </publication>
+
+    <publication type="book">
+      <ul>
+        <li>
+        </li>
+      </ul>
+    </publication>
+  </publications>
+
+</teacher>
+</faculty>
